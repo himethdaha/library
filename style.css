@@ -73,6 +73,8 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
 }
 label {
   font-size: 2rem;
@@ -103,4 +105,23 @@ input[type="checkbox"] {
 .submit {
   font-size: 1.6rem;
   align-self: center;
+}
+
+.close-form {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #adb5bd;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: absolute;
+  right: 3%;
+  top: 1%;
+}
+.close-form:hover {
+  color: #000;
+}
+
+.form-active {
+  visibility: visible;
+  opacity: 1;
 }
