@@ -31,6 +31,8 @@ body {
 }
 
 .new-book,
+.remove-book,
+.remove-books,
 .show-books,
 .submit {
   font-size: 1.8rem;
@@ -50,17 +52,27 @@ body {
 }
 
 .new-book:hover,
+.remove-book:hover,
+.remove-books:hover,
 .show-books:hover,
 .submit:hover {
   transform: scale(1.1) translateY(2px);
 }
 
+.remove-book {
+  width: 22rem;
+}
+
+.remove-books {
+  width: 23rem;
+}
 .show-books {
   width: 20rem;
 }
 
 .table {
   display: grid;
+  margin: 4rem 0rem 0rem 20rem;
   grid-template-columns: repeat(4, 20rem);
   grid-auto-rows: 2rem;
   margin-bottom: 3rem;
@@ -69,13 +81,14 @@ body {
 }
 
 .heading {
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-transform: uppercase;
+  margin-bottom: 1.4rem;
 }
 
 .row {
   background-color: white;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
   padding-bottom: 2.1rem;
   border-bottom: 1px solid black;

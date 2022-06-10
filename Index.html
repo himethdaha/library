@@ -18,22 +18,24 @@
     <div class="container">
       <div class="btn-flex">
         <button class="new-book">Add a Book</button>
+        <button class="remove-book">Remove a Book</button>
+        <button class="remove-books">Remove All Books</button>
         <button class="show-books">Show All Books</button>
       </div>
       <div class="table">
-        <div class="heading heading-title">title</div>
+        <!-- <div class="heading heading-title">title</div>
         <div class="heading heading-author">author</div>
         <div class="heading heading-pages">pages</div>
-        <div class="heading heading-status">status</div>
+        <div class="heading heading-status">status</div> -->
         <!-- <button class="grid-btn remove">Remove Book</button>
         <button class="grid-btn status">Change status</button> -->
       </div>
       <form action="" method="post" class="new-book-form">
         <span class="close-form">x</span>
         <label for="title">Title</label>
-        <input type="text" id="title" name="title" />
+        <input type="text" id="title" name="title" required />
         <label for="author">Author</label>
-        <input type="text" id="author" name="author" />
+        <input type="text" id="author" name="author" required />
         <label for="pages">Pages</label>
         <input type="text" id="pages" name="pages" />
         <div class="checkbox-cont">
