@@ -25,7 +25,13 @@ body {
   position: relative;
 }
 
+.btn-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .new-book,
+.show-books,
 .submit {
   font-size: 1.8rem;
   text-transform: uppercase;
@@ -44,22 +50,36 @@ body {
 }
 
 .new-book:hover,
+.show-books:hover,
 .submit:hover {
   transform: scale(1.1) translateY(2px);
 }
 
+.show-books {
+  width: 20rem;
+}
+
 .table {
   display: grid;
-  grid-template-columns: repeat(6, 20rem);
+  grid-template-columns: repeat(4, 20rem);
   grid-auto-rows: 2rem;
   margin-bottom: 3rem;
   margin-top: 3rem;
-  gap: 1.2rem;
+  gap: 2rem 2rem;
 }
 
 .heading {
   font-size: 2rem;
   text-transform: uppercase;
+}
+
+.row {
+  background-color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding-bottom: 2.1rem;
+  border-bottom: 1px solid black;
+  display: inline;
 }
 
 .new-book-form {
@@ -121,7 +141,7 @@ input[type="checkbox"] {
   color: #000;
 }
 
-.form-active {
+.active {
   visibility: visible;
   opacity: 1;
 }
