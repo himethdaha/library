@@ -33,6 +33,7 @@ body {
 .new-book,
 .remove-book,
 .remove-books,
+.change-status,
 .show-books,
 .submit {
   font-size: 1.8rem;
@@ -54,6 +55,7 @@ body {
 .new-book:hover,
 .remove-book:hover,
 .remove-books:hover,
+.change-status:hover,
 .show-books:hover,
 .submit:hover {
   transform: scale(1.1) translateY(2px);
@@ -65,6 +67,10 @@ body {
 
 .remove-books {
   width: 23rem;
+}
+
+.change-status {
+  width: 18rem;
 }
 .show-books {
   width: 20rem;

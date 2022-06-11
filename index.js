@@ -1,6 +1,7 @@
 const addnewBook = document.querySelector(".new-book");
 const removeBook = document.querySelector(".remove-book");
 const removeBooks = document.querySelector(".remove-books");
+const changeStatus = document.querySelector(".change-status");
 const showBooks = document.querySelector(".show-books");
 const closeForm = document.querySelector(".close-form");
 const bookForm = document.querySelector(".new-book-form");
@@ -23,8 +24,17 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  for (let i = 0; i < myLibrary.length + 1; i++) {
+    this.id = myLibrary.length - (myLibrary.length - i);
+  }
 }
 
+//Add an Id to each object in the array
+myLibrary = myLibrary.map((element, i) => {
+  element.id = i + 1;
+  console.log(element);
+  return element;
+});
 //Fuction called when the submit form button is clicked
 function addBookToLibrary() {
   //Check if pages is a number
@@ -47,12 +57,11 @@ function deleteBook() {
   );
 
   let index = parseInt(value);
-  console.log(index);
 
   if (typeof index !== "number" || isNaN(index)) {
     alert("Must be a number");
   }
-  if (myLibrary.length === 0 || index < 0 || index >= myLibrary.length - 1) {
+  if (myLibrary.length === 0 || index < 0 || index >= myLibrary.length) {
     alert("Index doesn't match a record ");
   } else {
     //Get the index
@@ -62,9 +71,38 @@ function deleteBook() {
   }
 }
 
+//Function called when changestatus button is clicked
+function statusChange() {
+  let value = prompt(
+    "Enter the Index of the book you want to change the status for",
+    "Index starts from 0 :)"
+  );
+
+  let index = parseInt(value);
+
+  if (typeof index !== "number" || isNaN(index)) {
+    alert("Must be a number");
+  }
+  if (myLibrary.length === 0 || index < 0 || index >= myLibrary.length) {
+    alert("Index doesn't match a record ");
+  } else {
+    //Get the index
+    let objIndex = myLibrary.findIndex((obj) => obj.id === index);
+    //Change the status
+    if (myLibrary[objIndex].read === true) {
+      myLibrary[objIndex].read = false;
+      console.log(`updated ${myLibrary[objIndex]}`);
+    } else {
+      myLibrary[objIndex].read = true;
+      console.log(`updated ${myLibrary[objIndex]}`);
+    }
+  }
+}
+
 //Function to delete all books
 function deleteAllBooks() {
   myLibrary.splice(0, myLibrary.length);
+  showAllBooks();
 }
 
 //Function to show all the books
@@ -136,6 +174,9 @@ removeBook.addEventListener("click", function () {
 
 //DeleteAllBooks event listener
 removeBooks.addEventListener("click", deleteAllBooks);
+
+//ChangeStatus event listenr
+changeStatus.addEventListener("click", statusChange);
 
 //Remove book event listener
 closeForm.addEventListener("click", function () {
